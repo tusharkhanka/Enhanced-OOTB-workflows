@@ -13,8 +13,8 @@
             <list>
                 <value>alfresco/module/${project.artifactId}/model/content-model.xml</value>
                 <value>alfresco/module/${project.artifactId}/model/workflow-model.xml</value>
-                <value>alfresco/module/${project.artifactId}/model/bpmModel.xml</value>
-                <value>alfresco/module/${project.artifactId}/model/workflowModel.xml</value>
+                <!-- <value>alfresco/module/${project.artifactId}/model/bpmModel.xml</value>
+                <value>alfresco/module/${project.artifactId}/model/workflowModel.xml</value> -->
             </list>
         </property>
         <property name="labels">
@@ -34,12 +34,12 @@
                     <prop key="mimetype">text/xml</prop>
                     <prop key="redeploy">true</prop>
                 </props>
-                <props>
+                <!-- <props>
                     <prop key="engineId">activiti</prop>
                     <prop key="location">alfresco/module/${project.artifactId}/workflow/parallel-review.bpmn</prop>
                     <prop key="mimetype">text/xml</prop>
-                    <prop key="redeploy">true</prop>
-                </props>
+                    <prop key="redeploy">false</prop>
+                </props> -->
                 
                 
                 

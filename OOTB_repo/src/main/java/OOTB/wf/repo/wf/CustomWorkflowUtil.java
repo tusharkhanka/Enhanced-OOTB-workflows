@@ -60,6 +60,32 @@ public class CustomWorkflowUtil {
 		return resultSet.getNodeRef(0);
 	}
 
+
+	/**
+	 * 
+	 * @param templatePATH - contains path to the email template used for sending the mail
+	 * @param groupName - list containing email of the recipients
+	 * @param templateModel - parameters required by the email template
+	 * @param subject - subject of the email
+	 */
+	public void sendMailList(String templatePATH, List<String> groupName,
+			Map<String, Object> templateModel, String subject) {
+
+		logger.debug("In CustomWorkflowUtil sendMailList() method");
+		Action mailAction = actionService.createAction(MailActionExecuter.NAME);
+		mailAction.setParameterValue(MailActionExecuter.PARAM_SUBJECT, subject + templateModel.get("workflowDescription"));
+		mailAction.setParameterValue(MailActionExecuter.PARAM_TO_MANY, (Serializable) groupName);
+		// Pass the email template noderef.
+		mailAction.setParameterValue(MailActionExecuter.PARAM_TEMPLATE, getTemplateNodeRef(templatePATH));
+		mailAction.setParameterValue(MailActionExecuter.PARAM_TEMPLATE_MODEL, (Serializable) templateModel);
+		mailAction.setParameterValue(MailActionExecuter.PARAM_IGNORE_SEND_FAILURE, true);
+
+		
+		// execute the mail action
+		actionService.executeAction(mailAction, null);
+	}
+
+	
 	/**
 	 * 
 	 * @param templatePATH - contains path to the email template used for sending the mail
@@ -73,32 +99,12 @@ public class CustomWorkflowUtil {
 		logger.debug("In CustomWorkflowUtil sendMail() method");
 
 		Action mailAction = actionService.createAction(MailActionExecuter.NAME);
-		mailAction.setParameterValue(MailActionExecuter.PARAM_SUBJECT, subject
-				+ templateModel.get("workflowDescription"));
-
-		mailAction.setParameterValue(MailActionExecuter.PARAM_TO_MANY,
-				(Serializable) recipient);
-
+		mailAction.setParameterValue(MailActionExecuter.PARAM_SUBJECT, subject + templateModel.get("workflowDescription"));
+		mailAction.setParameterValue(MailActionExecuter.PARAM_TO_MANY, (Serializable) recipient);
 		// Pass the email template noderef.
-		mailAction.setParameterValue(MailActionExecuter.PARAM_TEMPLATE,
-				getTemplateNodeRef(templatePATH));
-
-		mailAction.setParameterValue(MailActionExecuter.PARAM_TEMPLATE_MODEL,
-				(Serializable) templateModel);
-
-		mailAction.setParameterValue(
-				MailActionExecuter.PARAM_IGNORE_SEND_FAILURE, true);
-
-		// No need for this.
-		/*
-		 * mailAction.setParameterValue(MailActionExecuter.PARAM_FROM,
-		 * "no-reply@eisenvault.com");
-		 */
-
-		// Not required for now, as we are using template to send the text
-		// mailAction.setParameterValue(MailActionExecuter.PARAM_TEXT,
-		// sb.toString());
-
+		mailAction.setParameterValue(MailActionExecuter.PARAM_TEMPLATE, getTemplateNodeRef(templatePATH));
+		mailAction.setParameterValue(MailActionExecuter.PARAM_TEMPLATE_MODEL, (Serializable) templateModel);
+		mailAction.setParameterValue(MailActionExecuter.PARAM_IGNORE_SEND_FAILURE, true);
 		// execute the mail action
 		actionService.executeAction(mailAction, null);
 	}
@@ -120,15 +126,13 @@ public class CustomWorkflowUtil {
 
 		for (ChildAssociationRef childAssociationRef : lResources) {
 			NodeRef nodeRef = childAssociationRef.getChildRef();
-			String docName = (String) nodeService.getProperty(nodeRef,
-					ContentModel.PROP_NAME);
+			String docName = (String) nodeService.getProperty(nodeRef, ContentModel.PROP_NAME);
 			logger.debug("Printing docName " + docName);
 			SiteInfo siteInfo = siteService.getSite(nodeRef);
 			String siteName = siteInfo.getShortName();
 			logger.debug("Printing sitename " + siteName);
 			String stringNodeRef = nodeRef.toString();
-			String link = "page/site/" + siteName
-					+ "/document-details?nodeRef=" + stringNodeRef;
+			String link = "page/site/" + siteName + "/document-details?nodeRef=" + stringNodeRef;
 			Map<String, String> docPropMap = new HashMap<String, String>();
 			docPropMap.put("docName", docName);
 			docPropMap.put("docLink", link);
@@ -141,70 +145,7 @@ public class CustomWorkflowUtil {
 		return attachedDocsInfoList;
 	}
 
-	/**
-	 * 
-	 * @param workflowDescription - description of the workflow
-	 * @param templatePATH -  email template location in the Repository
-	 * @param recipientsList - list containing email of the recipients
-	 * @param initiator - initiator of the workflow
-	 * @param subject - subject of the workflow
-	 * @param packageNodeRef - noderef of the current workflow in progress
-	 */
-	/*public void prepareApprovalMail(String workflowDescription,
-			String templatePATH, List<String> recipientsList, String initiator,
-			String subject, NodeRef packageNodeRef) {
-
-		logger.debug("In CustomWorkflowUtil prepareApprovalMail() method");
-
-		Map<String, Object> templateModel = new HashMap<String, Object>();
-
-		// templateModel.put("taskID", taskId);
-		templateModel.put("attachedDocsInfoList",
-				getAttachedDocsList(packageNodeRef));
-		templateModel.put("workflowDescription", workflowDescription);
-
-		for (Map.Entry<String, Object> entry : templateModel.entrySet()) {
-			logger.debug(entry.getKey() + " / " + entry.getValue());
-		}
-
-		sendMail(templatePATH, recipientsList, templateModel, subject);
-	}*/
-
-	/**
-	 * 
-	 * @param workflowDescription - description of the workflow
-	 * @param templatePATH -  email template location in the Repository
-	 * @param recipientsList - list containing email of the recipients
-	 * @param rejectionLevel - level at which the workflow is rejected
-	 * @param rejectedBy - username of the workflow rejector
-	 * @param rejectionReason - reason for workflow rejection
-	 * @param subject - subject of the workflow
-	 * @param packageNodeRef - noderef of the current workflow in progress
-	 */
-	/*public void prepareRejectMail(String workflowDescription,
-			String templatePATH, List<String> recipientsList,
-			String rejectionLevel, String rejectedBy, String rejectionReason,
-			String subject, NodeRef packageNodeRef) {
-
-		logger.debug("In CustomWorkflowUtil prepareRejectMail() method");
-
-		Map<String, Object> templateModel = new HashMap<String, Object>();
-
-		templateModel.put("rejectionLevel", rejectionLevel);
-		templateModel.put("rejectedBy", rejectedBy);
-		templateModel.put("rejectionReason", rejectionReason);
-		templateModel.put("attachedDocsInfoList",
-				getAttachedDocsList(packageNodeRef));
-		templateModel.put("workflowDescription", workflowDescription);
-
-		for (Map.Entry<String, Object> entry : templateModel.entrySet()) {
-			logger.debug(entry.getKey() + " / " + entry.getValue());
-		}
-
-		sendMail(templatePATH, recipientsList, templateModel, subject);
-
-	}*/
-
+	
 	/**
 	 * 
 	 * @param workflowDescription - description of the workflow
@@ -215,6 +156,38 @@ public class CustomWorkflowUtil {
 	 * @param subject - subject of the workflow
 	 * @param packageNodeRef - noderef of the current workflow in progress
 	 */
+	
+	public void prepareReminderMailList(String workflowDescription,
+			String templatePATH, List<String> groupName, String taskId,
+			String subject, NodeRef packageNodeRef) {
+
+		logger.debug("In CustomWorkflowUtil prepareReminderMailList() method");
+
+		Map<String, Object> templateModel = new HashMap<String, Object>();
+
+		templateModel.put("review", "review");
+		logger.debug("Printing emailId group name wali " + groupName );
+		templateModel.put("taskID", taskId);
+		logger.debug("Printing taskId " + taskId );
+		templateModel.put("attachedDocsInfoList", getAttachedDocsList(packageNodeRef));
+		logger.debug("Printing packageNodeRef " + packageNodeRef );
+		templateModel.put("workflowDescription", workflowDescription);
+		logger.debug("Printing workflowDescription " + workflowDescription );
+
+		sendMailList(templatePATH, groupName, templateModel, subject);
+
+	}
+	
+	
+	/**
+	 * 
+	 * @param workflowDescription - description of the workflow
+	 * @param templatePATH -  email template location in the Repository
+	 * @param recipient - reviewer to whom the email needs to be sent
+	 * @param taskId - taskId of the current task
+	 * @param subject - subject of the workflow
+	 * @param packageNodeRef - noderef of the current workflow in progress
+	 */
 	public void prepareReminderMail(String workflowDescription,
 			String templatePATH, String recipient, String taskId,
 			String subject, NodeRef packageNodeRef) {
@@ -222,46 +195,15 @@ public class CustomWorkflowUtil {
 		logger.debug("In CustomWorkflowUtil prepareReminderMail() method");
 
 		Map<String, Object> templateModel = new HashMap<String, Object>();
-
-		
 		templateModel.put("review", "review");
-
-		
-
 		templateModel.put("taskID", taskId);
-		templateModel.put("attachedDocsInfoList",
-				getAttachedDocsList(packageNodeRef));
+		templateModel.put("attachedDocsInfoList", getAttachedDocsList(packageNodeRef));
 		templateModel.put("workflowDescription", workflowDescription);
 
 		sendMail(templatePATH, recipient, templateModel, subject);
 
 	}
 
-	/**
-	 * 
-	 * @param workflowDescription - description of the workflow
-	 * @param templatePATH -  email template location in the Repository
-	 * @param recipientsList - list containing email of the recipients
-	 * @param initiatorComment - comments for abortion 
-	 * @param subject - subject of the workflow
-	 * @param packageNodeRef - noderef of the current workflow in progress
-	 */
-	/*public void prepareAbortMail(String workflowDescription,
-			String templatePATH, List<String> recipientsList,
-			String initiatorComment, String subject, NodeRef packageNodeRef) {
-
-		logger.debug("In CustomWorkflowUtil prepareAbortMail() method");
-
-		Map<String, Object> templateModel = new HashMap<String, Object>();
-
-		templateModel.put("initiatorComment", initiatorComment);
-		templateModel.put("attachedDocsInfoList",
-				getAttachedDocsList(packageNodeRef));
-		templateModel.put("workflowDescription", workflowDescription);
-
-		sendMail(templatePATH, recipientsList, templateModel, subject);
-	}
-*/
 	/* taken from ActivitiScriptBase.java */
 	protected ServiceRegistry getServiceRegistry() {
 		ProcessEngineConfigurationImpl config = Context

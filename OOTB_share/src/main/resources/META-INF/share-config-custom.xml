@@ -37,7 +37,7 @@
 
     <!-- __________________________________ acme:document base type _________________________________________________-->
 
-      <config evaluator="string-compare" condition="activiti$activitiParallelReviewTushar">
+      <!-- <config evaluator="string-compare" condition="activiti$activitiParallelReviewTushar">
       <forms>
          <form>
             <field-visibility>
@@ -141,7 +141,7 @@
  
  
  
- <!-- Activiti Pooled Review and Approve Workflow Definition -->
+ Activiti Pooled Review and Approve Workflow Definition
    <config evaluator="string-compare" condition="activiti$activitiReviewPooledTushar">
       <forms>
          <form>
@@ -189,7 +189,7 @@
          </form>
       </forms>
    </config>
- 
+  -->
  
  
  
