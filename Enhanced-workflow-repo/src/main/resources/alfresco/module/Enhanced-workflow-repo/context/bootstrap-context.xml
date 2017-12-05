@@ -36,7 +36,7 @@
                     <prop key="engineId">activiti</prop>
                     <prop key="location">alfresco/module/${project.artifactId}/workflow/review.bpmn</prop>
                     <prop key="mimetype">text/xml</prop>
-                    <prop key="redeploy">true</prop>
+                    <prop key="redeploy">false</prop>
                 </props>
                 <!-- <props>
                     <prop key="engineId">activiti</prop>
@@ -49,13 +49,13 @@
                     <prop key="engineId">activiti</prop>
                     <prop key="location">alfresco/module/${project.artifactId}/workflow/parallel-review-group.bpmn</prop>
                     <prop key="mimetype">text/xml</prop>
-                    <prop key="redeploy">true</prop>
+                    <prop key="redeploy">false</prop>
                 </props>
                 <props>
                     <prop key="engineId">activiti</prop>
                     <prop key="location">alfresco/module/${project.artifactId}/workflow/review-pooled.bpmn</prop>
                     <prop key="mimetype">text/xml</prop>
-                    <prop key="redeploy">true</prop>
+                    <prop key="redeploy">false</prop>
                 </props>
 
             </list>
