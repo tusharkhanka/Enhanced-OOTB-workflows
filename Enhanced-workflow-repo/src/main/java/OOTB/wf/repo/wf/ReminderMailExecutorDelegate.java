@@ -27,7 +27,7 @@ public class ReminderMailExecutorDelegate extends BaseJavaDelegate {
 		/**
 		 * @templatePATH = reminder email template location in the Repository
 		 */
-		String templatePATH = "PATH:\"/app:company_home/app:dictionary/app:email_templates/cm:wf-reminder-email-1.html.ftl\"";
+		String templatePATH = "PATH:\"/app:company_home/app:dictionary/app:email_templates/cm:EisenVault_Email_Templates/cm:wf-reminder-email-1.html.ftl\"";
 
 		/**
 		 * @recipient = reviewer to whom the email needs to be sent
