@@ -88,7 +88,7 @@
         <timeCycle>0 0/1 * * * ?</timeCycle>
       </timerEventDefinition>
     </boundaryEvent>
-    <serviceTask id="alfrescoScripttask1" name="Alfresco Script Task" activiti:class="OOTB.wf.repo.wf.ReminderMailExecutorDelegate"></serviceTask>
+    <serviceTask id="alfrescoScripttask1" name="Alfresco Script Task" activiti:class="com.eisenvault.repo.workflow.ReminderMailExecutorDelegate"></serviceTask>
     <sequenceFlow id="flow7" sourceRef="boundarytimer1" targetRef="alfrescoScripttask1"></sequenceFlow>
   </process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_activitiReviewPooled">

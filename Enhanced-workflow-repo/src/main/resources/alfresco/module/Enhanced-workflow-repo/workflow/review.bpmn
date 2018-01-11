@@ -62,7 +62,7 @@
         <timeCycle>0 0/1 * * * ?</timeCycle>
       </timerEventDefinition>
     </boundaryEvent>
-    <serviceTask id="alfrescoScripttask1" name="Alfresco Script Task" activiti:class="OOTB.wf.repo.wf.ReminderMailExecutorDelegate">
+    <serviceTask id="alfrescoScripttask1" name="Alfresco Script Task" activiti:class="com.eisenvault.repo.workflow.ReminderMailExecutorDelegate">
       <extensionElements>
         <!-- <activiti:field name="script">
           <activiti:string><![CDATA[logger.log("E-mail reminder - review task");

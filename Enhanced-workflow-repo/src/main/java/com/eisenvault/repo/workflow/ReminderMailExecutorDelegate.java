@@ -1,4 +1,4 @@
-package OOTB.wf.repo.wf;
+package com.eisenvault.repo.workflow;
 
 import java.util.List;
 
