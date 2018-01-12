@@ -23,7 +23,7 @@
         </property>
     </bean>
 
-    <bean id="com.eisenvault.Enhanced_workflow_repo.sampleprocess.workflowBootstrap" parent="workflowDeployer">
+    <!-- <bean id="com.eisenvault.Enhanced_workflow_repo.sampleprocess.workflowBootstrap" parent="workflowDeployer">
         <property name="workflowDefinitions">
             <list>
                 <props>
@@ -31,19 +31,19 @@
                     <prop key="location">alfresco/module/${project.artifactId}/workflow/sample-process.bpmn20.xml</prop>
                     <prop key="mimetype">text/xml</prop>
                 </props>
-                <!-- remindermail in out of the box workflows -->
+                remindermail in out of the box workflows
                 <props>
                     <prop key="engineId">activiti</prop>
                     <prop key="location">alfresco/module/${project.artifactId}/workflow/review.bpmn</prop>
                     <prop key="mimetype">text/xml</prop>
                     <prop key="redeploy">false</prop>
                 </props>
-                <!-- <props>
+                <props>
                     <prop key="engineId">activiti</prop>
                     <prop key="location">alfresco/module/${project.artifactId}/workflow/parallel-review.bpmn</prop>
                     <prop key="mimetype">text/xml</prop>
                     <prop key="redeploy">false</prop>
-                </props> -->
+                </props>
                 
                 <props>
                     <prop key="engineId">activiti</prop>
@@ -60,5 +60,5 @@
 
             </list>
         </property>
-    </bean>
+    </bean> -->
 </beans>
