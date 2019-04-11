@@ -75,7 +75,7 @@
 							<control-param name="style">width: 95%</control-param>
 						</control>
 					</field>
-					<field id="bpm:workflowDueDate" label-id="workflow.field.due"
+					<field id="bpm:workflowDueDate" label-id="workflow.field.due" mandatory="true"
 						set="info">
 						<control template="/org/alfresco/components/form/controls/date.ftl">
 							<control-param name="showTime">false</control-param>
@@ -130,7 +130,7 @@
 							<control-param name="style">width: 95%</control-param>
 						</control>
 					</field>
-					<field id="bpm:workflowDueDate" label-id="workflow.field.due"
+					<field id="bpm:workflowDueDate" label-id="workflow.field.due" mandatory="true"
 						set="info">
 						<control template="/org/alfresco/components/form/controls/date.ftl">
 							<control-param name="showTime">false</control-param>
@@ -185,7 +185,7 @@
 							<control-param name="style">width: 95%</control-param>
 						</control>
 					</field>
-					<field id="bpm:workflowDueDate" label-id="workflow.field.due"
+					<field id="bpm:workflowDueDate" label-id="workflow.field.due" mandatory="true"
 						set="info">
 						<control template="/org/alfresco/components/form/controls/date.ftl">
 							<control-param name="showTime">false</control-param>
@@ -248,7 +248,7 @@
 							<control-param name="style">width: 95%</control-param>
 						</control>
 					</field>
-					<field id="bpm:workflowDueDate" label-id="workflow.field.due"
+					<field id="bpm:workflowDueDate" label-id="workflow.field.due" mandatory="true"
 						set="info">
 						<control template="/org/alfresco/components/form/controls/date.ftl">
 							<control-param name="showTime">false</control-param>
@@ -311,7 +311,7 @@
 							<control-param name="style">width: 95%</control-param>
 						</control>
 					</field>
-					<field id="bpm:workflowDueDate" label-id="workflow.field.due"
+					<field id="bpm:workflowDueDate" label-id="workflow.field.due" mandatory="true"
 						set="info">
 						<control template="/org/alfresco/components/form/controls/date.ftl">
 							<control-param name="showTime">false</control-param>
@@ -373,7 +373,7 @@
 							<control-param name="style">width: 95%</control-param>
 						</control>
 					</field>
-					<field id="bpm:workflowDueDate" label-id="workflow.field.due"
+					<field id="bpm:workflowDueDate" label-id="workflow.field.due" mandatory="true"
 						set="info">
 						<control template="/org/alfresco/components/form/controls/date.ftl">
 							<control-param name="showTime">false</control-param>
@@ -427,7 +427,7 @@
 							<control-param name="style">width: 95%</control-param>
 						</control>
 					</field>
-					<field id="bpm:workflowDueDate" label-id="workflow.field.due"
+					<field id="bpm:workflowDueDate" label-id="workflow.field.due" mandatory="true"
 						set="info">
 						<control template="/org/alfresco/components/form/controls/date.ftl">
 							<control-param name="showTime">false</control-param>
@@ -490,7 +490,7 @@
 					<show id="bpm:workflowPriority" />
 					<show id="bpm:workflowDueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:sendEMailNotifications" />
 				</field-visibility>
@@ -498,7 +498,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="other" appearance="title" label-id="workflow.set.other" />
 
@@ -517,7 +517,7 @@
 					<field id="bpm:workflowDueDate" set="info" label-id="workflow.field.due">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="bpm:sendEMailNotifications" set="other" />
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
@@ -557,7 +557,7 @@
 					<show id="bpm:workflowPriority" />
 					<show id="bpm:workflowDueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:sendEMailNotifications" />
 				</field-visibility>
@@ -565,7 +565,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="other" appearance="title" label-id="workflow.set.other" />
 
@@ -584,7 +584,7 @@
 					<field id="bpm:workflowDueDate" set="info" label-id="workflow.field.due">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="bpm:sendEMailNotifications" set="other" />
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
@@ -624,7 +624,7 @@
 					<show id="bpm:workflowPriority" />
 					<show id="bpm:workflowDueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:sendEMailNotifications" />
 				</field-visibility>
@@ -632,7 +632,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="other" appearance="title" label-id="workflow.set.other" />
 
@@ -651,7 +651,7 @@
 					<field id="bpm:workflowDueDate" set="info" label-id="workflow.field.due">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="bpm:sendEMailNotifications" set="other" />
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
@@ -691,7 +691,7 @@
 					<show id="bpm:workflowPriority" />
 					<show id="bpm:workflowDueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:sendEMailNotifications" />
 				</field-visibility>
@@ -699,7 +699,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="other" appearance="title" label-id="workflow.set.other" />
 
@@ -718,7 +718,7 @@
 					<field id="bpm:workflowDueDate" set="info" label-id="workflow.field.due">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
 							<control-param name="uploadDirectory">uploads</control-param>
@@ -762,7 +762,7 @@
 					<show id="bpm:workflowDueDate" />
 					<show id="bpm:taskId" />
 					<show id="wf:requiredApprovePercent" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:sendEMailNotifications" />
 				</field-visibility>
@@ -770,7 +770,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="other" appearance="title" label-id="workflow.set.other" />
 
@@ -790,7 +790,7 @@
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
 					<field id="wf:requiredApprovePercent" set="info" />
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
 							<control-param name="uploadDirectory">uploads</control-param>
@@ -830,9 +830,9 @@
 					<show id="taskOwner" />
 					<show id="bpm:workflowPriority" />
 					<show id="bpm:workflowDueDate" />
-					<show id="bpm:taskId" />
+					<show id="bpm:taskId" />workflow-details-actions.get.js
 					<show id="wf:requiredApprovePercent" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:sendEMailNotifications" />
 				</field-visibility>
@@ -840,7 +840,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="other" appearance="title" label-id="workflow.set.other" />
 
@@ -860,7 +860,7 @@
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
 					<field id="wf:requiredApprovePercent" set="info" />
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
 							<control-param name="uploadDirectory">uploads</control-param>
@@ -905,13 +905,13 @@
 					<show id="inwf:resourceTitle" />
 					<show id="inwf:resourceDescription" />
 					<show id="inwf:inviterUserName" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 				</field-visibility>
 				<appearance>
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 
 					<field id="message">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
@@ -935,7 +935,7 @@
 					<field id="inwf:resourceTitle" set="info" />
 					<field id="inwf:resourceDescription" set="info" />
 					<field id="inwf:inviterUserName" set="info" />
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 				</appearance>
 			</form>
 		</forms>
@@ -963,13 +963,13 @@
 					<show id="bpm:taskId" />
 					<show id="imwf:inviteeUserName" />
 					<show id="imwf:resourceName" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 				</field-visibility>
 				<appearance>
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 
 					<field id="message">
@@ -989,7 +989,7 @@
 					</field>
 					<field id="imwf:inviteeUserName" set="info" />
 					<field id="imwf:resourceName" set="info" />
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 				</appearance>
 			</form>
 		</forms>
@@ -1008,7 +1008,7 @@
 					<show id="bpm:priority" />
 					<show id="bpm:dueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:comment" />
 					<show id="transitions" />
@@ -1017,7 +1017,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="response" appearance="title" label-id="workflow.set.response" />
 
@@ -1035,7 +1035,7 @@
 					<field id="bpm:dueDate" set="info" label-id="workflow.field.due">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
 							<control-param name="uploadDirectory">uploads</control-param>
@@ -1061,7 +1061,7 @@
 					<show id="bpm:priority" />
 					<show id="bpm:dueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:comment" />
 					<show id="transitions" />
@@ -1070,7 +1070,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="response" appearance="title" label-id="workflow.set.response" />
 
@@ -1088,7 +1088,7 @@
 					<field id="bpm:dueDate" set="info" label-id="workflow.field.due">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
 							<control-param name="uploadDirectory">uploads</control-param>
@@ -1114,7 +1114,7 @@
 					<show id="bpm:priority" />
 					<show id="bpm:dueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:comment" />
 					<show id="transitions" />
@@ -1123,7 +1123,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="response" appearance="title" label-id="workflow.set.response" />
 
@@ -1141,7 +1141,7 @@
 					<field id="bpm:dueDate" set="info" label-id="workflow.field.due">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
 							<control-param name="uploadDirectory">uploads</control-param>
@@ -1167,7 +1167,7 @@
 					<show id="bpm:priority" />
 					<show id="bpm:dueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:comment" />
 					<show id="transitions" />
@@ -1176,7 +1176,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="response" appearance="title" label-id="workflow.set.response" />
 
@@ -1194,7 +1194,7 @@
 					<field id="bpm:dueDate" set="info" label-id="workflow.field.due">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
 							<control-param name="uploadDirectory">uploads</control-param>
@@ -1221,7 +1221,7 @@
 					<show id="bpm:priority" />
 					<show id="bpm:dueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:comment" />
 					<show id="wf:reviewOutcome" />
@@ -1230,7 +1230,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="response" appearance="title" label-id="workflow.set.response" />
 
@@ -1248,7 +1248,7 @@
 					<field id="bpm:dueDate" set="info" label-id="workflow.field.due">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
 							<control-param name="uploadDirectory">uploads</control-param>
@@ -1278,7 +1278,7 @@
 					<show id="bpm:priority" />
 					<show id="bpm:dueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:comment" />
 					<show id="transitions" />
@@ -1287,7 +1287,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="response" appearance="title" label-id="workflow.set.response" />
 
@@ -1305,7 +1305,7 @@
 					<field id="bpm:dueDate" set="info" label-id="workflow.field.due">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
 							<control-param name="uploadDirectory">uploads</control-param>
@@ -1331,7 +1331,7 @@
 					<show id="bpm:priority" />
 					<show id="bpm:dueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="packageItems" />
 					<show id="bpm:comment" />
 					<show id="transitions" />
@@ -1340,7 +1340,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="items" appearance="title" label-id="workflow.set.items" />
 					<set id="response" appearance="title" label-id="workflow.set.response" />
 
@@ -1358,7 +1358,7 @@
 					<field id="bpm:dueDate" set="info" label-id="workflow.field.due">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
 							<control-param name="uploadDirectory">uploads</control-param>
@@ -1384,7 +1384,7 @@
 					<show id="bpm:priority" />
 					<show id="bpm:dueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="wf:reviewerCount" />
 					<show id="wf:approveCount" />
 					<show id="wf:requiredPercent" />
@@ -1397,7 +1397,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="outcome" appearance="title" label-id="workflow.set.outcome"
 						template="/org/alfresco/components/form/2-column-set.ftl" />
 					<set id="items" appearance="title" label-id="workflow.set.items" />
@@ -1429,7 +1429,7 @@
 					<field id="wf:actualPercent" set="outcome">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
 							<control-param name="uploadDirectory">uploads</control-param>
@@ -1455,7 +1455,7 @@
 					<show id="bpm:priority" />
 					<show id="bpm:dueDate" />
 					<show id="bpm:taskId" />
-					<show id="bpm:status" />
+					<hide id="bpm:status" />
 					<show id="wf:reviewerCount" />
 					<show id="wf:approveCount" />
 					<show id="wf:requiredPercent" />
@@ -1468,7 +1468,7 @@
 					<set id="" appearance="title" label-id="workflow.set.task.info" />
 					<set id="info" appearance=""
 						template="/org/alfresco/components/form/3-column-set.ftl" />
-					<set id="progress" appearance="title" label-id="workflow.set.task.progress" />
+					<!-- <set id="progress" appearance="title" label-id="workflow.set.task.progress" /> -->
 					<set id="outcome" appearance="title" label-id="workflow.set.outcome"
 						template="/org/alfresco/components/form/2-column-set.ftl" />
 					<set id="items" appearance="title" label-id="workflow.set.items" />
@@ -1500,7 +1500,7 @@
 					<field id="wf:actualPercent" set="outcome">
 						<control template="/org/alfresco/components/form/controls/info.ftl" />
 					</field>
-					<field id="bpm:status" set="progress" />
+					<!-- <field id="bpm:status" set="progress" /> -->
 					<field id="packageItems">
 						<control template="/alvex-uploader.ftl">
 							<control-param name="uploadDirectory">uploads</control-param>
